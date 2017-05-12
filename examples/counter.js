@@ -1,12 +1,13 @@
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 // Import Jumpstate
 import { State, Effect, Actions, CreateJumpstateMiddleware } from 'jumpstate'
 
 // These are some reusable actions for all of our counters
-const increment = (state, payload) => {
-  return { count: state.count + 1 }
+const increment = (state, payload = 1) => {
+  return { count: state.count + payload }
 }
-const decrement = (state, payload) => {
-  return { count: state.count - 1 }
+const decrement = (state, payload = 1) => {
+  return { count: state.count - payload }
 }
 
 // Create a state with some actions
@@ -94,7 +95,7 @@ React.createClass({
 const store = createStore(
   combineReducers(reducers),
   // Just be sure to apply the Jumpstate Middlware :)
-  applyMiddlware(CreateJumpstateMiddleware())
+  applyMiddleware(CreateJumpstateMiddleware())
 )
 
 // You can take it from here...
