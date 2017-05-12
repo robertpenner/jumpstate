@@ -68,7 +68,7 @@ export default function (...args) {
     // Attach the action type to the reducer's actionType List
     reducerWithActions.actionTypes[actionName] = resolvedActionName
 
-    // Create a shorthand action dispather method
+    // Create a shorthand action dispatcher method
     const actionMethod = (payload) => {
       const action = actionCreator(payload)
       // Otherwise, proxy the action through the attached redux dispatcher

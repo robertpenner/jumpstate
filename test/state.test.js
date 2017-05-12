@@ -11,7 +11,7 @@ test('Import State', () => {
 })
 
 describe('State', () => {
-  it('return a reducer', () => {
+  it('returns a reducer', () => {
     const Jumpstate = require('../src/index')
     const State = Jumpstate.State
 
